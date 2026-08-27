@@ -9,7 +9,7 @@
 
     <h2>Jenkins Deployment Successful!</h2>
 
-    <p>This application was built,test using Maven.</p>
+    <p>This application was maven built,test using Maven.</p>
     <p>WAR deployed to Apache Tomcat.</p>
 
 </body>
