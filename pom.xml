@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<packaging>war</packaging>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -7,9 +8,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>maven-demo</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
+<artifactId>maven-demo</artifactId>
+<version>1.0-SNAPSHOT</version>
+<packaging>war</packaging>
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
