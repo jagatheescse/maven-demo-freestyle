@@ -1,65 +1,18 @@
-pipeline {
-    agent any
+<?xml version="1.0" encoding="UTF-8"?>
 
-    tools {
-        jdk 'JDK-17'      // name from Global Tool Configuration
-        maven 'Maven-3.9' // name from Global Tool Configuration
-    }
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    stages {
-        stage('Checkout') {
-            steps {
-                // If using Git SCM in job config, this can be just:
-                checkout scm
-                // Or explicitly:
-                // git branch: 'main', url: 'https://github.com/youruser/your-repo.git'
-            }
-        }
+    <modelVersion>4.0.0</modelVersion>
 
-        stage('Build') {
-            steps {
-                script {
-                    bat 'mvn clean compile -B'
-                }
-            }
-        }
+    <groupId>com.example</groupId>
+    <artifactId>maven-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-        stage('Test') {
-            steps {
-                script {
-                    bat 'mvn test -B'
-                }
-            }
-            post {
-                always {
-                    junit '**/target/surefire-reports/*.xml'
-                }
-            }
-        }
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+    </properties>
 
-        stage('Package') {
-            steps {
-                script {
-                    bat 'mvn package -DskipTests -B'
-                }
-            }
-            post {
-                success {
-                    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-                }
-            }
-        }
-    }
-
-    post {
-        success {
-            echo '✅ Maven build & tests passed!'
-        }
-        failure {
-            echo '❌ Build or tests failed!'
-        }
-        always {
-            cleanWs()
-        }
-    }
-}
+</project>
