@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Maven Demo Application</title>
+    <title>Maven Demo new Application</title>
 </head>
 <body>
 
