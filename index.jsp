@@ -5,7 +5,7 @@
 </head>
 <body>
 
-    <h1>Welcome to Maven Demo Application</h1>
+    <h1>Welcome to Maven new Demo Application</h1>
 
     <h2>Jenkins Deployment Successful!</h2>
 
